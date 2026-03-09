@@ -1,21 +1,20 @@
 import React, { CSSProperties } from 'react';
 
 export default function SSSPage() {
-  const styles: { [key: string]: CSSProperties } = {
-    container: {
-      backgroundColor: '#09090b', color: '#a1a1aa', height: '100vh', width: '100vw',
-      display: 'flex', flexDirection: 'column' as const, alignItems: 'center', justifyContent: 'center',
-      padding: '20px', position: 'relative', overflow: 'hidden', margin: 0
+  const styles: Record<string, CSSProperties> = {
+    body: {
+      backgroundColor: '#09090b', color: '#a1a1aa', minHeight: '100vh', width: '100%',
+      display: 'flex', flexDirection: 'column' as 'column', alignItems: 'center', justifyContent: 'center',
+      padding: '40px', position: 'relative', margin: 0
     },
-    main: { width: '100%', maxWidth: '850px', zIndex: 10, display: 'flex', flexDirection: 'column' as const },
-    header: { borderBottom: '4px solid #1f1f23', width: '100%' },
+    header: { borderBottom: '4px solid #1f1f23', paddingBottom: '24px', width: '100%', maxWidth: '850px', marginBottom: '40px' },
     logo: { fontWeight: '800', color: '#fff', textTransform: 'uppercase', letterSpacing: '-0.05em', lineHeight: '0.85' },
-    box: { backgroundColor: '#000', border: '4px solid #1f1f23', position: 'relative', width: '100%', boxShadow: '12px 12px 0px 0px rgba(255, 69, 0, 0.15)' },
-    warning: { color: '#FF4500', fontWeight: '800', fontStyle: 'italic' }
+    box: { backgroundColor: '#000', border: '4px solid #1f1f23', padding: '48px', position: 'relative', width: '100%', maxWidth: '850px', boxShadow: '12px 12px 0px 0px rgba(255, 69, 0, 0.15)' },
+    warning: { color: '#FF4500', fontWeight: '800', marginTop: '32px', fontStyle: 'italic', fontSize: '20px' }
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.body}>
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
         * { font-family: 'JetBrains Mono', monospace !important; box-sizing: border-box; }
@@ -24,35 +23,27 @@ export default function SSSPage() {
         .blink { animation: blinker 1s steps(2, start) infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
         
-        /* DESKTOP FIDELITY */
-        @media (min-width: 769px) {
-          .logo-text { font-size: 5rem; }
-          .header-wrap { padding-bottom: 24px; margin-bottom: 40px; }
-          .brutalist-section { padding: 48px; }
-          .log-stack { gap: 12px; font-size: 16px; }
-          .warning-text { font-size: 20px; margin-top: 32px; }
-          .footer-wrap { margin-top: 40px; }
-        }
+        /* PC - V7 Baseline Fidelity */
+        @media (min-width: 769px) { .logo-text { font-size: 5rem; } }
 
-        /* MOBILE OPTIMIZATION (ZERO SCROLL) */
+        /* MOBILE - Basic Compression (Scroll Enabled) */
         @media (max-width: 768px) {
-          .container-div { justify-content: flex-start !important; padding-top: 10vh !important; }
-          .logo-text { font-size: 2.4rem; }
-          .header-wrap { padding-bottom: 10px; margin-bottom: 12px; }
-          .brutalist-section { padding: 18px; border-width: 2px; }
-          .log-stack { gap: 4px; font-size: 0.72rem; }
-          .warning-text { font-size: 0.85rem; margin-top: 10px; }
-          .footer-wrap { margin-top: 15px; font-size: 9px !important; }
+          .logo-text { font-size: 2.8rem; }
+          .logo-header { padding-bottom: 16px !important; margin-bottom: 24px !important; }
+          .brutalist-section { padding: 24px !important; border-width: 2px !important; }
+          .log-stack { gap: 8px !important; font-size: 0.8rem !important; }
+          .warning-text { font-size: 1rem !important; margin-top: 16px !important; }
+          .footer-final { margin-top: 24px !important; font-size: 10px !important; }
         }
       `}} />
 
       <div className="scanlines"></div>
       <div className="grid-bg"></div>
 
-      <main className="container-div" style={styles.main}>
-        <header className="header-wrap" style={styles.header}>
+      <main style={{ width: '100%', maxWidth: '850px', zIndex: 10, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+        <header className="logo-header" style={styles.header}>
           <h1 className="logo-text" style={styles.logo}>SILICON<br />STENCIL<br />STUDIOS</h1>
-          <p style={{ fontSize: '0.75rem', letterSpacing: '0.4em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase', marginTop: '10px' }}>
+          <p style={{ fontSize: '14px', letterSpacing: '0.4em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase', marginTop: '12px' }}>
             MONOLITH INFRASTRUCTURE // V4.0
           </p>
         </header>
@@ -61,24 +52,22 @@ export default function SSSPage() {
           <div style={{ position: 'absolute', top: '-4px', left: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderRight: 'none', borderBottom: 'none' }}></div>
           <div style={{ position: 'absolute', bottom: '-4px', right: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderLeft: 'none', borderTop: 'none' }}></div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-            <span className="blink" style={{ width: '12px', height: '12px', backgroundColor: '#FF4500', display: 'inline-block' }}></span>
-            <h2 style={{ color: '#fff', fontSize: '1.3rem', fontWeight: '700', letterSpacing: '0.15em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+            <span className="blink" style={{ width: '16px', height: '16px', backgroundColor: '#FF4500', display: 'inline-block' }}></span>
+            <h2 style={{ color: '#fff', fontSize: '28px', fontWeight: '700', letterSpacing: '0.2em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
           </div>
 
-          <div className="log-stack" style={{ display: 'flex', flexDirection: 'column', fontWeight: '700', textTransform: 'uppercase' }}>
-            <p>&gt; INITIATING PROTOCOL 3.2.0...</p>
+          <div className="log-stack" style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '16px', fontWeight: '700', textTransform: 'uppercase' }}>
+            <p style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
             <p style={{ color: '#52525b' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
-            <p style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70%].</p>
-            <p style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE VALVES...</p>
+            <p style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
+            <p style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
             <p style={{ color: '#52525b' }}>&gt; ANALYZING SOUL TRAITS...</p>
-            <p className="warning-text" style={styles.warning}>
-              &gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
-            </p>
+            <p className="warning-text" style={styles.warning}>&gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span></p>
           </div>
         </section>
 
-        <footer className="footer-wrap" style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#3f3f46', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        <footer className="footer-final" style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#3f3f46', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '40px' }}>
           <p>THE SYSTEM PROTECTS ITS OWN BUGS.</p>
           <p style={{ color: '#FF4500' }}>ENCRYPTED BY SSS</p>
         </footer>
