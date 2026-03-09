@@ -24,7 +24,7 @@ export default function SSSPage() {
         .blink { animation: blinker 1s steps(2, start) infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
         
-        /* PC - V7 Baseline Fidelity */
+        /* DESKTOP FIDELITY */
         @media (min-width: 769px) {
           .logo-text { font-size: 5rem; }
           .header-wrap { padding-bottom: 24px; margin-bottom: 40px; }
@@ -34,22 +34,22 @@ export default function SSSPage() {
           .footer-wrap { margin-top: 40px; }
         }
 
-        /* MOBILE - Zero Scroll Compression */
+        /* MOBILE OPTIMIZATION (ZERO SCROLL) */
         @media (max-width: 768px) {
-          .logo-text { font-size: 2.5rem; }
-          .header-wrap { padding-bottom: 12px; margin-bottom: 15px; }
-          .brutalist-section { padding: 20px; border-width: 2px; }
-          .log-stack { gap: 6px; font-size: 0.75rem; }
-          .warning-text { font-size: 0.9rem; margin-top: 12px; }
+          .container-div { justify-content: flex-start !important; padding-top: 10vh !important; }
+          .logo-text { font-size: 2.4rem; }
+          .header-wrap { padding-bottom: 10px; margin-bottom: 12px; }
+          .brutalist-section { padding: 18px; border-width: 2px; }
+          .log-stack { gap: 4px; font-size: 0.72rem; }
+          .warning-text { font-size: 0.85rem; margin-top: 10px; }
           .footer-wrap { margin-top: 15px; font-size: 9px !important; }
-          .mobile-br { display: block; }
         }
       `}} />
 
       <div className="scanlines"></div>
       <div className="grid-bg"></div>
 
-      <main style={styles.main}>
+      <main className="container-div" style={styles.main}>
         <header className="header-wrap" style={styles.header}>
           <h1 className="logo-text" style={styles.logo}>SILICON<br />STENCIL<br />STUDIOS</h1>
           <p style={{ fontSize: '0.75rem', letterSpacing: '0.4em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase', marginTop: '10px' }}>
@@ -61,18 +61,19 @@ export default function SSSPage() {
           <div style={{ position: 'absolute', top: '-4px', left: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderRight: 'none', borderBottom: 'none' }}></div>
           <div style={{ position: 'absolute', bottom: '-4px', right: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderLeft: 'none', borderTop: 'none' }}></div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
             <span className="blink" style={{ width: '12px', height: '12px', backgroundColor: '#FF4500', display: 'inline-block' }}></span>
-            <h2 style={{ color: '#fff', fontSize: '1.4rem', fontWeight: '700', letterSpacing: '0.2em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
+            <h2 style={{ color: '#fff', fontSize: '1.3rem', fontWeight: '700', letterSpacing: '0.15em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
           </div>
 
           <div className="log-stack" style={{ display: 'flex', flexDirection: 'column', fontWeight: '700', textTransform: 'uppercase' }}>
-            <p style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
+            <p>&gt; INITIATING PROTOCOL 3.2.0...</p>
             <p style={{ color: '#52525b' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
             <p style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70%].</p>
             <p style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE VALVES...</p>
+            <p style={{ color: '#52525b' }}>&gt; ANALYZING SOUL TRAITS...</p>
             <p className="warning-text" style={styles.warning}>
-              &gt; WARNING:<br className="mobile-br" style={{display:'none'}} /> MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
+              &gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
             </p>
           </div>
         </section>
