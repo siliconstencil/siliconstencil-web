@@ -39,7 +39,6 @@ export default function SSSPage() {
 
       <main className="z-10 w-full max-w-4xl flex flex-col gap-8">
         
-        {/* Header - 3 Satırlı Revize Logotype */}
         <header className="border-b-4 border-zinc-800 pb-4 flex justify-between items-end glitch-load" style={{ animationDelay: '0.2s' }}>
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white uppercase tracking-tighter leading-[0.85] mb-2">
@@ -47,10 +46,8 @@ export default function SSSPage() {
             </h1>
             <p className="text-xs md:text-sm tracking-widest uppercase text-zinc-500 font-bold">Monolith Infrastructure // v4.0</p>
           </div>
-          {/* Right side removed as requested */}
         </header>
 
-        {/* Main Content Area */}
         <section className="border-4 border-zinc-800 p-6 md:p-10 brutalist-box bg-black relative glitch-load" style={{ animationDelay: '0.4s' }}>
           <div className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-soul-orange -ml-1 -mt-1"></div>
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-soul-orange -mr-1 -mb-1"></div>
@@ -62,18 +59,18 @@ export default function SSSPage() {
             </div>
             
             <div className="space-y-2 text-sm md:text-base font-bold">
-              <p className="text-zinc-300">> INITIATING PROTOCOL 3.2.0...</p>
-              <p className="text-zinc-500">> REBUILDING FOUNDATION ARCHITECTURE.</p>
-              <p className="text-zinc-500">> REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
-              <p className="text-zinc-500">> CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
+              <p className="text-zinc-300">&gt; INITIATING PROTOCOL 3.2.0...</p>
+              <p className="text-zinc-500">&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
+              <p className="text-zinc-500">&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
+              <p className="text-zinc-500">&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
+              <p className="text-zinc-500">&gt; ANALYZING SOUL TRAITS...</p>
               <p className="text-soul-orange font-extrabold mt-6 text-lg md:text-xl italic">
-                > WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
+                &gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
               </p>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-zinc-700 uppercase font-bold tracking-widest glitch-load" style={{ animationDelay: '0.6s' }}>
           <p>The system protects its own bugs.</p>
           <p className="mt-2 md:mt-0 text-soul-orange border-b border-soul-orange/20">Encrypted by SSS</p>
@@ -81,7 +78,6 @@ export default function SSSPage() {
 
       </main>
 
-      {/* Background decorative grid */}
       <div className="fixed inset-0 z-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#a1a1aa 1px, transparent 1px), linear-gradient(90deg, #a1a1aa 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
 
     </div>
