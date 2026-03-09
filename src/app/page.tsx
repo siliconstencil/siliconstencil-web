@@ -1,5 +1,7 @@
+import React, { CSSProperties } from 'react';
+
 export default function SSSPage() {
-  const styles = {
+  const styles: Record<string, CSSProperties> = {
     body: {
       backgroundColor: '#09090b', color: '#a1a1aa', minHeight: '100vh', width: '100vw',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
