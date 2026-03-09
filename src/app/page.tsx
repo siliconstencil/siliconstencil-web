@@ -3,7 +3,7 @@ export default function SSSPage() {
     <div className="min-h-screen w-full flex flex-col items-center justify-center p-6 relative selection:bg-[#FF4500] selection:text-black overflow-hidden bg-[#09090b] text-[#a1a1aa]">
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
-        div { font-family: 'JetBrains Mono', monospace; }
+        div, h1, h2, p, footer, header, section { font-family: 'JetBrains Mono', monospace; }
         .soul-orange { color: #FF4500; }
         .bg-soul-orange { background-color: #FF4500; }
         .border-soul-orange { border-color: #FF4500; }
@@ -44,13 +44,13 @@ export default function SSSPage() {
           <div className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-soul-orange -ml-1 -mt-1"></div>
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-soul-orange -mr-1 -mb-1"></div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 items-center text-center"> { /* Cerrahi Müdahale: İçerik merkezlendi */ }
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-soul-orange blink"></div>
               <h2 className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest">System Offline</h2>
             </div>
             
-            <div className="space-y-2 text-sm md:text-base">
+            <div className="space-y-2 text-sm md:text-base w-full max-w-xl">
               <p className="text-zinc-300">&gt; INITIATING PROTOCOL 3.2.0...</p>
               <p className="text-zinc-500">&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
               <p className="text-zinc-500">&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
