@@ -1,17 +1,8 @@
-﻿export default function Page() {
+export default function RootPage() {
   return (
-    <div style={{ 
-      height: '100vh', 
-      display: 'flex', 
-      flexDirection: 'column',
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      background: '#121212',
-      color: '#fff',
-      fontFamily: 'monospace'
-    }}>
-      <h1 style={{ color: '#FF4500', marginBottom: '10px' }}>SILICON STENCIL</h1>
-      <p style={{ color: '#888' }}>SYSTEM ONLINE // V1.0</p>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#0a0a0a', fontFamily: 'monospace' }}>
+      <h1 style={{ color: '#FF4500', textTransform: 'uppercase', marginBottom: '1rem' }}>SILICON STENCIL</h1>
+      <p style={{ color: '#555555' }}>// SYSTEM COMPILING: UNDER CONSTRUCTION</p>
     </div>
   )
 }
