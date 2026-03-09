@@ -1,9 +1,9 @@
 export default function SSSPage() {
   return (
     <div style={{
-      backgroundColor: '#09090b', color: '#a1a1aa', minHeight: '100vh', width: '100vw',
+      backgroundColor: '#09090b', color: '#a1a1aa', minHeight: '100vh', width: '100%',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-      padding: '2rem', position: 'relative', overflow: 'hidden', margin: 0,
+      padding: '20px', position: 'relative', overflow: 'hidden', margin: 0
     }}>
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
@@ -22,17 +22,15 @@ export default function SSSPage() {
           background-size: 40px 40px;
         }
 
-        .main-content { width: 100%; max-width: 800px; z-index: 10; display: flex; flex-direction: column; gap: 3rem; }
+        .main-content { width: 100%; max-width: 800px; z-index: 10; display: flex; flex-direction: column; gap: 1.5rem; }
         
         .logo-h1 { 
-          font-size: 4.5rem; font-weight: 800; color: #fff; 
-          text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; margin-bottom: 0.5rem;
+          font-size: 5rem; font-weight: 800; color: #fff; 
+          text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; margin-bottom: 0.2rem;
         }
 
-        @media (max-width: 768px) { .logo-h1 { font-size: 2.5rem; } }
-
         .brutalist-section {
-          background-color: #000; border: 4px solid #1f1f23; padding: 3rem; position: relative;
+          background-color: #000; border: 4px solid #1f1f23; padding: 2.5rem; position: relative;
           box-shadow: 12px 12px 0px 0px rgba(255, 69, 0, 0.15);
         }
 
@@ -40,21 +38,26 @@ export default function SSSPage() {
         .accent-tl { top: -4px; left: -4px; border-right: none; border-bottom: none; }
         .accent-br { bottom: -4px; right: -4px; border-left: none; border-top: none; }
 
-        .blink-box { width: 16px; height: 16px; background-color: #FF4500; display: inline-block; vertical-align: middle; }
         .blink { animation: blinker 1s steps(2, start) infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        .warning-text { color: #FF4500; font-weight: 800; margin-top: 1.5rem; font-style: italic; font-size: 1.1rem; }
-        .footer-text { display: flex; justify-content: space-between; font-size: 0.75rem; color: #3f3f46; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        /* MOBİL REVİZYONLARI */
+        @media (max-width: 768px) {
+          .logo-h1 { font-size: 2.8rem; }
+          .brutalist-section { padding: 1.5rem; border-width: 2px; }
+          .main-content { gap: 1rem; }
+          .warning-br { display: block; height: 0; margin-top: 4px; }
+          .mobile-hide { display: none; }
+        }
       `}} />
 
       <div className="scanlines"></div>
       <div className="grid-bg"></div>
 
       <main className="main-content">
-        <header style={{ borderBottom: '4px solid #1f1f23', paddingBottom: '1.5rem' }}>
+        <header style={{ borderBottom: '2px solid #27272a', paddingBottom: '0.8rem' }}>
           <h1 className="logo-h1">SILICON<br />STENCIL<br />STUDIOS</h1>
-          <p style={{ fontSize: '0.875rem', letterSpacing: '0.4em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase' }}>
             MONOLITH INFRASTRUCTURE // V4.0
           </p>
         </header>
@@ -63,22 +66,27 @@ export default function SSSPage() {
           <div className="accent accent-tl"></div>
           <div className="accent accent-br"></div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-            <span className="blink-box blink"></span>
-            <h2 style={{ color: '#fff', fontSize: '1.75rem', fontWeight: '700', letterSpacing: '0.2em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
+            <span className="blink" style={{ width: '12px', height: '12px', backgroundColor: '#FF4500', display: 'inline-block' }}></span>
+            <h2 style={{ color: '#fff', fontSize: '1.4rem', fontWeight: '700', letterSpacing: '0.15em', textTransform: 'uppercase' }}>SYSTEM OFFLINE</h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.85rem', fontWeight: '700', textTransform: 'uppercase', lineHeight: '1.4' }}>
             <p style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
             <p style={{ color: '#52525b' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
             <p style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
-            <p style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
-            <p style={{ color: '#52525b' }}>&gt; ANALYZING SOUL TRAITS...</p>
-            <p className="warning-text">&gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span></p>
+            <p style={{ color: '#52525b' }} className="mobile-hide">&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
+            <p style={{ color: '#52525b' }} className="mobile-hide">&gt; ANALYZING SOUL TRAITS...</p>
+            
+            <p style={{ color: '#FF4500', fontWeight: '800', marginTop: '1rem', fontStyle: 'italic' }}>
+              &gt; WARNING:<br className="warning-br" /> 
+              MASSIVE DATA STREAM DETECTED.<br className="warning-br" /> 
+              STANDBY FOR DEPLOYMENT<span className="blink">_</span>
+            </p>
           </div>
         </section>
 
-        <footer className="footer-text">
+        <footer style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.65rem', color: '#3f3f46', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
           <p>THE SYSTEM PROTECTS ITS OWN BUGS.</p>
           <p style={{ color: '#FF4500' }}>ENCRYPTED BY SSS</p>
         </footer>
