@@ -1,17 +1,17 @@
 import React, { CSSProperties } from 'react';
 
 /**
- * ARCH: V13_FINAL_STABLE
+ * ARCH: V13_FINAL_RESTORATION
  * ROLE: WEB MASTER (SSS_DEV)
- * LOGIC: ATOMIC_RESTORATION
+ * LOGIC: ATOMIC_FIX_PC_MOBILE_SPLIT
  */
 
 export default function SSSPage() {
   const styles: Record<string, CSSProperties> = {
     body: {
       backgroundColor: '#09090b', color: '#a1a1aa', minHeight: '100vh', width: '100vw',
-      display: 'flex', flexDirection: 'column' as const, alignItems: 'center', justifyContent: 'center',
-      padding: '40px', position: 'relative', overflowX: 'hidden', margin: 0
+      display: 'flex', flexDirection: 'column' as const, alignItems: 'center',
+      padding: '40px', position: 'relative', margin: 0, overflowX: 'hidden'
     },
     header: { borderBottom: '4px solid #1f1f23', paddingBottom: '24px', width: '100%', maxWidth: '850px', marginBottom: '40px' },
     logo: { fontSize: '72px', fontWeight: '800', color: '#fff', textTransform: 'uppercase', letterSpacing: '-0.05em', lineHeight: '0.85' },
@@ -20,7 +20,7 @@ export default function SSSPage() {
   };
 
   return (
-    <div style={styles.body}>
+    <div style={styles.body} className="root-container">
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
         * { font-family: 'JetBrains Mono', monospace !important; box-sizing: border-box; }
@@ -29,13 +29,20 @@ export default function SSSPage() {
         .blink { animation: blinker 1s steps(2, start) infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
         
+        /* PC - FULL SCREEN FIDELITY */
+        @media (min-width: 769px) {
+          .root-container { justify-content: center !important; }
+        }
+
+        /* MOBILE/HALF - UPWARD SHIFT & COMPRESSION */
         @media (max-width: 768px) { 
+          .root-container { justify-content: flex-start !important; padding: 20px !important; padding-top: 10vh !important; }
           .logo-text { font-size: 42px !important; } 
           .header-main { padding-bottom: 16px !important; margin-bottom: 24px !important; }
           .brutalist-section { padding: 24px !important; border-width: 2px !important; }
-          .log-line { font-size: 14px !important; gap: 8px !important; }
+          .log-line { font-size: 14px !important; }
           .warning-text { font-size: 16px !important; margin-top: 16px !important; }
-          .footer-main { margin-top: 24px !important; }
+          .footer-main { margin-top: 32px !important; }
         }
       `}} />
 
