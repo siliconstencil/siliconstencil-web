@@ -1,5 +1,11 @@
 import React, { CSSProperties } from 'react';
 
+/**
+ * ARCH: V13_FINAL_STABLE
+ * ROLE: WEB MASTER (SSS_DEV)
+ * LOGIC: ATOMIC_RESTORATION
+ */
+
 export default function SSSPage() {
   const styles: Record<string, CSSProperties> = {
     body: {
@@ -22,21 +28,29 @@ export default function SSSPage() {
         .grid-bg { position: fixed; inset: 0; opacity: 0.08; pointer-events: none; z-index: 0; background-image: linear-gradient(#a1a1aa 1px, transparent 1px), linear-gradient(90deg, #a1a1aa 1px, transparent 1px); background-size: 40px 40px; }
         .blink { animation: blinker 1s steps(2, start) infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
-        @media (max-width: 768px) { .logo-text { font-size: 42px !important; } }
+        
+        @media (max-width: 768px) { 
+          .logo-text { font-size: 42px !important; } 
+          .header-main { padding-bottom: 16px !important; margin-bottom: 24px !important; }
+          .brutalist-section { padding: 24px !important; border-width: 2px !important; }
+          .log-line { font-size: 14px !important; gap: 8px !important; }
+          .warning-text { font-size: 16px !important; margin-top: 16px !important; }
+          .footer-main { margin-top: 24px !important; }
+        }
       `}} />
 
       <div className="scanlines"></div>
       <div className="grid-bg"></div>
 
       <main style={{ width: '100%', maxWidth: '850px', zIndex: 10, display: 'flex', flexDirection: 'column' }}>
-        <header style={styles.header}>
+        <header className="header-main" style={styles.header}>
           <h1 className="logo-text" style={styles.logo}>SILICON<br />STENCIL<br />STUDIOS</h1>
           <p style={{ fontSize: '14px', letterSpacing: '0.4em', color: '#52525b', fontWeight: '700', textTransform: 'uppercase', marginTop: '12px' }}>
             MONOLITH INFRASTRUCTURE // V4.0
           </p>
         </header>
 
-        <section style={styles.box}>
+        <section className="brutalist-section" style={styles.box}>
           <div style={{ position: 'absolute', top: '-4px', left: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderRight: 'none', borderBottom: 'none' }}></div>
           <div style={{ position: 'absolute', bottom: '-4px', right: '-4px', width: '16px', height: '16px', border: '4px solid #FF4500', borderLeft: 'none', borderTop: 'none' }}></div>
 
@@ -46,16 +60,16 @@ export default function SSSPage() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '16px', fontWeight: '700', textTransform: 'uppercase' }}>
-            <p style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
-            <p style={{ color: '#52525b' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
-            <p style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
-            <p style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
-            <p style={{ color: '#52525b' }}>&gt; ANALYZING SOUL TRAITS...</p>
-            <p style={styles.warning}>&gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span></p>
+            <p className="log-line" style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
+            <p className="log-line" style={{ color: '#52525b' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
+            <p className="log-line" style={{ color: '#52525b' }}>&gt; REINFORCING CONCRETE STRUCTURES [70% COMPLETED].</p>
+            <p className="log-line" style={{ color: '#52525b' }}>&gt; CALIBRATING SOUL ORANGE EXTRACTION VALVES...</p>
+            <p className="log-line" style={{ color: '#52525b' }}>&gt; ANALYZING SOUL TRAITS...</p>
+            <p className="warning-text" style={styles.warning}>&gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span></p>
           </div>
         </section>
 
-        <footer style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#3f3f46', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '40px' }}>
+        <footer className="footer-main" style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#3f3f46', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '40px' }}>
           <p>THE SYSTEM PROTECTS ITS OWN BUGS.</p>
           <p style={{ color: '#FF4500' }}>ENCRYPTED BY SSS</p>
         </footer>
