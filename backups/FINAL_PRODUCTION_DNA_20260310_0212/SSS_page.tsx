@@ -43,7 +43,7 @@ export default function SSSPortal() {
           <div className="terminal-text">
             <p style={{ color: '#d4d4d8' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
             <p>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
-            <p>&gt; REINFORCING CONCRETE STRUCTURES [73%].</p>
+            <p>&gt; REINFORCING CONCRETE STRUCTURES [70%].</p>
             <p>&gt; CALIBRATING SOUL ORANGE VALVES...</p>
             <p className="warning">&gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span></p>
           </div>
