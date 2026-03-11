@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme { --color-soul-orange: #FF4500; --font-mono: 'JetBrains Mono', monospace; }
+@layer base {
+  body { 
+    background-color: #050505; color: #e2e2e7; margin: 0; overflow: hidden; 
+    font-family: var(--font-mono); -webkit-font-smoothing: antialiased; 
+  }
+}
+.scanlines { position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.2; background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.1) 50%); background-size: 100% 2px; }
+.grid-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.05; background-image: linear-gradient(rgba(161,161,170,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(161,161,170,0.1) 1px, transparent 1px); background-size: 30px 30px; }
+.animate-blink { animation: blinker 1s steps(2, start) infinite; }
+@keyframes blinker { 50% { opacity: 0; } }

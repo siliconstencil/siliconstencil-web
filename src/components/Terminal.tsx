@@ -1,27 +1,25 @@
-﻿'use client';
-import { useState } from 'react';
+import React from 'react';
 
 export default function Terminal() {
-  const [input, setInput] = useState('');
-  const [history, setHistory] = useState(['V4.0 MONOLITH INITIALIZED...', 'READY_FOR_COMMAND...']);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const cmd = input.toLowerCase();
-    let res = 'UNKNOWN_PROTOCOL';
-    if (cmd === 'help') res = 'AVAILABLE: STATUS, ABOUT';
-    if (cmd === 'status') res = 'SYSTEM: STABLE // PORT: 3000';
-    setHistory([...history, '> ' + input, res]);
-    setInput('');
-  };
-
   return (
-    <div className="bg-black border border-[#FF4500] p-4 font-mono text-xs h-64 overflow-y-auto">
-      {history.map((line, i) => <div key={i} className="text-[#FF4500]">{line}</div>)}
-      <form onSubmit={handleSubmit} className="flex mt-2">
-        <span className="text-[#FF4500] mr-2">$</span>
-        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="bg-transparent outline-none flex-1 text-white uppercase" autoFocus />
-      </form>
-    </div>
+    <section className="brutalist-box">
+      <div className="corner top-left"></div>
+      <div className="corner bottom-right"></div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
+        <div style={{ width: '16px', height: '16px', backgroundColor: '#FF4500' }} className="blink"></div>
+        <h2 style={{ color: '#fff', margin: 0, fontSize: 'clamp(18px, 4vw, 28px)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+          SYSTEM OFFLINE
+        </h2>
+      </div>
+      <div style={{ fontSize: 'clamp(11px, 2.8vw, 15px)', fontWeight: 700, textTransform: 'uppercase', lineHeight: '1.6', color: '#52525b' }}>
+        <p style={{ color: '#d4d4d8', margin: '8px 0' }}>&gt; INITIATING PROTOCOL 3.2.0...</p>
+        <p style={{ margin: '8px 0' }}>&gt; REBUILDING FOUNDATION ARCHITECTURE.</p>
+        <p style={{ margin: '8px 0' }}>&gt; REINFORCING CONCRETE STRUCTURES [73%].</p>
+        <p style={{ margin: '8px 0' }}>&gt; CALIBRATING SOUL ORANGE VALVES...</p>
+        <p className="warning" style={{ color: '#FF4500', marginTop: '30px', whiteSpace: 'normal', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
+          &gt; WARNING: MASSIVE DATA STREAM DETECTED. STANDBY FOR DEPLOYMENT<span className="blink">_</span>
+        </p>
+      </div>
+    </section>
   );
 }
