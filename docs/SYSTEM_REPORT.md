@@ -18,3 +18,12 @@ The system has been migrated to a high-standard Next.js structure:
 - Codebase and technical documentation are strictly in English.
 - Every architectural change is recorded in `/docs/CHANGELOG.md`.
 - System metadata is mirrored in `/docs/system_manifest.json`.
+
+## 4. Namespace Isolation & Sovereignty
+- **CORE_STUDIO (SSS):** `siliconstencil.com/` - Primary business/creative portal. Uses standard `Terminal.tsx`.
+- **CORE_PRODUCT (SLAB):** `siliconstencil.com/slab` - Lore and GamingBook entity. Operates on a sovereign design system (Pulsar Core).
+- **PROTECTION_PROTOCOL:** `/src/app/slab` is strictly isolated. It must not import shared UI components from the SSS namespace to prevent cross-contamination (UI Bleeding).
+- **REDUNDANCY:** Verified snapshot at `backups/SLAB_RESTORED_20260311_1630`.
+
+---
+*SEALED BY: HAKAN ORAL*
