@@ -17,3 +17,8 @@ AUTHORITY: HAKAN ORAL
 - **Fixed:** 16:10 split-screen layout issues with `width: 85%` and `word-break: keep-all`.
 - **Cleaned:** Removed unused root `/components` folder and synced with `/src/components`.
 - **Standardized:** All codebase documentation and technical comments set to English.
+
+## [2026-03-11] - SLAB Integration
+- **Renamed:** Permanent migration from `/gamingbook` to `/slab`.
+- **Navigation:** Integrated [ ACCESS_SLAB_RESOURCES ] link into the main terminal component.
+- **Optimization:** Achieved identical 141B static build sizes for both core routes.
